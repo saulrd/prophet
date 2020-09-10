@@ -4,3 +4,4 @@
 /dist/
 *.vsix
 .history/**
+*DS_Store

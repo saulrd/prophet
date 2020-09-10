@@ -144,7 +144,7 @@ export function getDWConfig(workspaceFolders?: readonly WorkspaceFolder[]): Prom
 	if (workspaceFolders) {
 		const filesWorkspaceFolders = workspaceFolders.filter(workspaceFolder => workspaceFolder.uri.scheme === 'file');
 		const dwConfigFiles = Promise.all(filesWorkspaceFolders.map(
-			workspaceFolder => findFiles(new RelativePattern(workspaceFolder, '**/dw.{json,js}'), 1).toPromise()
+			workspaceFolder => findFiles(new RelativePattern(workspaceFolder, '**/dw.{json,js}'), 2).toPromise()
 		));
 
 		return dwConfigFiles.then(configFiles => {
